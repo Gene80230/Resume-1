@@ -1,5 +1,5 @@
 *{padding:0; margin:0;}
-h1{text-align: center;}
+
 ul{list-style: none;}
 a{text-decoration:none;}
 
@@ -9,29 +9,33 @@ a{text-decoration:none;}
     clear:both;
 }
 .topNavBar{
-margin:10px 16px;
+margin:10px 0;
+position:fixed;
+left:0;
+top:0;
+width:100%;
 }
-.topNavBar > a{
-    float:left;
-    
-}
-.topNavBar>nav{
+
+.topNavBar nav{
     float:right;
 }
-.topNavBar>nav>ul li{
+.topNavBar nav ul li{
     font-size:14px;
     float:left;
     margin:6px 17px;
     font-weight:bold;
 }
-.topNavBar>nav>ul li a{
+.topNavBar nav > ul li a{
     color:#b7b7b7;
     border:3px solid transparent;
     padding:5px 0;
     display: block;
 }
-.topNavBar>nav>ul li a:hover{
+.topNavBar nav > ul li a:hover{
     border-bottom:3px solid #E5686C;
+}
+.topNavBar .topNavBar-inner{
+    margin:0 16px;
 }
 .logo{
     font-family:'Arial Black';
@@ -39,13 +43,25 @@ margin:10px 16px;
     color:inherit;
     display: block;
     margin:4px 0;
+    float:left;
 }
 .logo .rs{
     color:#E5686C;
+    margin-right:3px;
 }
 .logo .card{
     color:#9A9DA0;
 }
 .logo > span{
     padding:2px 0;
+}
+.banner{
+    background-image: url('./img/rs-cover.jpg');
+    height:515px;
+    background-position:center center;
+    background-size:cover;
+}
+.mask{
+    height:515px;
+    background-color:rgba(0,0,0,0.7);
 }
