@@ -3,6 +3,15 @@
     <head>
         <title>My Webpage</title>
         <link rel="stylesheet" href="./style.css">
+        <script src="//at.alicdn.com/t/font_1319566_k39zd1npl1.js"></script>
+        <style type="text/css">
+            .icon {
+               width: 1em; height: 1em;
+               vertical-align: -0.15em;
+               fill: currentColor;
+               overflow: hidden;
+            }
+        </style>
     </head>
     <body>
         <div class="topNavBar">
@@ -28,36 +37,58 @@
         </div>
         <main>
             <div class="userCard">
-                <div class="picture">
-                    <img src="#" alt="touxiang">
-                </div>
-                <div class="text">
-                    <div class="profile">
-                        <span class="welcome"></span>
-                        <h1>Gene</h1>
-                        <p>我是一名前端开发工程师</p>
-                        <hr>
-                        <dl>
-                            <dt>年龄</dt>
-                            <dd>22</dd>
-                            <dt>地址</dt>
-                            <dd>广东省广州市番禺区</dd>
-                            <dt>邮箱</dt>
-                            <dd>gjy80230@foxmail.com</dd>
-                            <dt>电话</dt>
-                            <dd>18172941111</dd>
-                        </dl>
+                <div class="pictureAndText clearfix">
+                    <div class="picture">
+                        <img src="./img/avatar.jpg" alt="touxiang">
                     </div>
-                    <footer class="media">
-                        <a href="#"><img src="#" alt="..."></a>
-                        <a href="#"><img src="#" alt="..."></a>
-                        <a href="#"><img src="#" alt="..."></a>
-                        <a href="#"><img src="#" alt="..."></a>
-                        <a href="#"><img src="#" alt="..."></a>
-                        <a href="#"><img src="#" alt="..."></a>
-                        <a href="#"><img src="#" alt="..."></a>
-                    </footer>
+                    <div class="text">
+                        <div class="profile">
+                            <span class="welcome">hello
+                                <span class="triangle"></span>
+                            </span>
+                            <h1>Gene</h1>
+                            <p>我是一名前端开发工程师</p>
+                            <hr>
+                            <dl class="clearfix">
+                                <dt>年龄</dt>
+                                <dd>22</dd>
+                                <dt>地址</dt>
+                                <dd>广东省广州市番禺区</dd>
+                                <dt>邮箱</dt>
+                                <dd>gjy80230@foxmail.com</dd>
+                                <dt>电话</dt>
+                                <dd>18172941111</dd>
+                            </dl>
+                        </div>
+                    </div>
                 </div>
+                <footer class="media">
+                    <a href="#">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-github"></use>
+                        </svg>
+                    </a>
+                    <a href="#">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-yanzheng-jianshu"></use>
+                        </svg>
+                    </a>
+                    <a href="#">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-big-WeChat"></use>
+                        </svg>
+                    </a>
+                    <a href="#">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-gugegoogle114"></use>
+                        </svg>
+                    </a>
+                    <a href="#">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-qq"></use>
+                        </svg>
+                    </a>
+                </footer>
             </div>
             <a class="button" href="#">下载 PDF 简历</a>
                 
