@@ -179,11 +179,13 @@ main .introduction{
     line-height:30px;
     font-weight:500;
 }
-.skills{
+.skills ,
+.portfolio{
     max-width:940px;
     margin:50px auto;
 }
-.skills > h2{
+.skills > h2,
+.portfolio > h2{
     color:#3d4451;
     font-size:34px;
     line-height:1.2;
@@ -222,4 +224,60 @@ main .introduction{
     width:50%;
     background:rgb(255, 117, 119);
     border-radius:4px;
+}
+.portfolio{
+    text-align:center;
+    margin-bottom:100px;
+}
+.portfolio nav{
+    text-align:center;
+    display:inline-block;
+    vertical-align:top;
+    margin-bottom:28px;
+}
+.portfolio ol{
+    display: inline-block;
+    vertical-align:top;
+}
+.portfolio ol li{
+    float:left;
+    margin-left:30px;
+    cursor:pointer;
+    
+}
+.portfolio ol li:first-child{
+    margin-left:0;
+}
+.portfolio .bar{
+    margin-top:8px;
+    height:5px;
+    background:white;
+    border-radius:4px;
+}
+.portfolio .bar .bar-inner{
+    height:100%;
+    width:28%;
+    background:rgb(255, 117, 119);
+    border-radius:4px;
+    transition:all 0.3s;
+}
+.portfolio .bar.state-1 .bar-inner{
+    width:28%;
+    margin-left:0;
+}
+.portfolio .bar.state-2 .bar-inner{
+    width:28%;
+    margin-left:96px;
+}
+.portfolio .bar.state-3 .bar-inner{
+    width:22%;
+    margin-left:186px;
+}
+.portfolio .works{
+    position: relative;
+    height:597px;
+}
+.portfolio .works .big,
+.portfolio .works .small{
+    position: absolute;
 }
