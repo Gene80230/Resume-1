@@ -41,10 +41,10 @@
                 </a>
                 <nav class="menu">
                     <ul class="clearfix">
-                        <li><a href="#">关于</a></li>
-                        <li><a href="#">技能</a></li>
+                        <li><a href="#siteAbout">关于</a></li>
+                        <li><a href="#siteSkill">技能</a></li>
                         <li>
-                            <a href="#">作品</a>
+                            <a href="#sitePortfolio">作品</a>
                             <ul id="submenu" class="submenu">
                                 <li>作品1</li>
                                 <li>作品2</li>
@@ -70,7 +70,7 @@
             <div class="mask"></div>
         </div>
         <main>
-            <div class="userCard">
+            <div id="siteAbout" class="userCard">
                 <div class="pictureAndText clearfix">
                     <div class="picture">
                         <img src="./img/avatar.jpg" alt="touxiang">
@@ -134,7 +134,7 @@
             </p>
             
         </main>
-        <section class="skills">
+        <section id="siteSkill" class="skills">
             <h2>技能</h2>
                 <ol class="clearfix">
                     <li>
@@ -175,7 +175,7 @@
                     </li>
                 </ol>      
         </section>
-        <section class="portfolio">
+        <section id="sitePortfolio" class="portfolio">
             <h2>作品集</h2>
             <nav>
                 <ol class="clearfix">
@@ -216,8 +216,6 @@
                 siteWelcome.classList.remove('active')
             },2000)
         </script> -->
-        <script src="./main.js">
-       
-        </script>
+        <script src="./main.js"></script>
     </body>
 </html>

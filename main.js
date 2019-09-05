@@ -18,3 +18,16 @@ for(let i=0; i<liTags.length; i++){
         li.classList.remove('active')  
     }
 }
+
+//找到导航栏中的a标签
+let aTag = document.querySelectorAll('nav.menu > ul > li > a')
+for(let i=0; i<aTag.length; i++){
+    aTag[i].onclick = function(x){
+        x.preventDefault()  //点击a标签不会跳转
+        let a = x.currentTarget
+        let href = a.getAttribute('href')
+        let element = document.querySelector(href)
+        let top = element.offsetTop
+        window.scrollTo(0, top - 70)
+    }
+}
