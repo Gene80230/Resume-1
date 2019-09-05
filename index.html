@@ -43,8 +43,22 @@
                     <ul class="clearfix">
                         <li><a href="#">关于</a></li>
                         <li><a href="#">技能</a></li>
-                        <li><a href="#">作品</a></li>
-                        <li><a href="#">博客</a></li>
+                        <li>
+                            <a class="menueTigger" href="#"><span>作品</span></a>
+                            <ul id="submenu" class="submenu">
+                                <li>作品1</li>
+                                <li>作品2</li>
+                                <li>作品3</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="menueTigger" href="#">博客</a>
+                            <ul id="submenu" class="submenu">
+                                <li>作品1</li>
+                                <li>作品2</li>
+                                <li>作品3</li>
+                            </ul>
+                        </li>
                         <li><a href="#">日历</a></li>
                         <li><a href="#">联系方式</a></li>
                         <li><a href="#">其他</a></li>
@@ -197,16 +211,38 @@
             }
         </script>
         <!-- <script>
+            //延时加载动画
             setTimeout(function(){
                 siteWelcome.classList.remove('active')
             },2000)
         </script> -->
         <script>
+        //滚动导航栏贴住顶部
         window.onscroll = function(x){
             if(window.scrollY > 0){
                 topNavBar.classList.add('sticky')
             }else{
                 topNavBar.classList.remove('sticky')
+            }
+        }
+        //找到节点的写一个兄弟元素
+        let aTags = document.getElementsByClassName('menueTigger')
+        for(let i=0; i<aTags.length; i++){
+            aTags[i].onmouseenter = function(x){ 
+                let a = x.currentTarget
+                let brother = a.nextSibling
+                while(brother.tagName !== 'UL'){   //不停的去找ul，找到为止
+                   brother =  brother.nextSibling
+                }
+                brother.classList.add('active')
+            }
+            aTags[i].onmouseleave = function(x){
+                let a = x.currentTarget
+                let brother = a.nextSibling
+                while(brother.tagName !== 'UL'){   //不停的去找ul，找到为止
+                   brother =  brother.nextSibling
+                }
+                brother.classList.remove('active')  
             }
         }
         </script>

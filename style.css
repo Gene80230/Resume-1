@@ -31,21 +31,54 @@ h1,h2,h3,h4,h5{
 .topNavBar nav{
     float:right;
 }
-.topNavBar nav ul li{
-    font-size:14px;
-    float:left;
-    margin:6px 17px;
-    font-weight:bold;
+.topNavBar nav > ul > li{
+    font-size: 14px;
+    float: left;
+    margin: 9px 17px;
+    font-weight: bold;
+    display: block;
+    position: relative;
 }
 .topNavBar nav > ul li a{
     color:inherit;
-    border:3px solid transparent;
     padding:5px 0;
     display: block;
 }
-.topNavBar nav > ul li a:hover{
-    border-bottom:3px solid rgb(255, 117, 119);
+.topNavBar nav > ul li a:hover::after{
+    position:absolute;  
+    content:''; 
+    top:100%;
+    left:0;
+    width:100%;
+    height:3px;
+    background:rgb(255, 117, 119);
+    animation: NavSlide 0.5s;
 }
+@keyframes NavSlide{
+    0%{
+        width:0%;
+    }
+    100%{
+        width:100%;
+    }
+}
+.topNavBar nav .submenu{
+    font-weight: normal;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    white-space: nowrap;
+    background:white;
+    padding: 10px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.25);
+    transition: all 0.3s;
+}
+.topNavBar nav .submenu.active{
+    display:block;
+}
+
+
 .topNavBar .topNavBar-inner{
     margin:0 16px;
 }
