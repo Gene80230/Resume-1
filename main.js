@@ -1,3 +1,10 @@
+ // Setup the animation loop.
+function animate(time) {
+    requestAnimationFrame(animate);
+    TWEEN.update(time);
+}
+requestAnimationFrame(animate);
+
  //滚动导航栏贴住顶部
  window.onscroll = function(x){
     if(window.scrollY > 0){
@@ -28,6 +35,23 @@ for(let i=0; i<aTag.length; i++){
         let href = a.getAttribute('href')
         let element = document.querySelector(href)
         let top = element.offsetTop
-        window.scrollTo(0, top - 70)
+        
+        let currentTop = window.scrollY //  当前位置
+        let targetTop = top - 70
+        let s = targetTop - currentTop
+        let t = Math.abs((s/100) * 300)
+        if(t > 500){t = 500}
+        var coords = { y: currentTop}; 
+        var tween = new TWEEN.Tween(coords) 
+        .to({ y: targetTop}, t) 
+        .easing(TWEEN.Easing.Quadratic.InOut) 
+        .onUpdate(function(){ 
+            window.scrollTo(0, coords.y)
+        })
+        .start(); 
     }
 }
+
+
+
+//
