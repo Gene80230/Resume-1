@@ -12,8 +12,25 @@ requestAnimationFrame(animate);
     }else{
         topNavBar.classList.remove('sticky')
     }
+    
+    let specialTags = document.querySelectorAll('[data-x]')
+    let minIndex = 0
+    for(let i=1;i<specialTags.length;i++){
+        if(Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop - window.scrollY)){
+            minIndex = i
+        }
+        
+    }
+    let id = specialTags[minIndex].id
+    let a = document.querySelector('a[href="#'+ id +'"]')
+    let li = a.parentNode
+    let brothers = li.parentNode.children
+    for(let i=0;i<brothers.length;i++){
+        brothers[i].classList.remove('active')
+    }
+    li.classList.add('active')
 }
-//找到节点的写一个兄弟元素
+//找到节点的下一个兄弟元素
 let liTags = document.querySelectorAll('nav.menu > ul > li')
 for(let i=0; i<liTags.length; i++){
     liTags[i].onmouseenter = function(x){ 
@@ -52,6 +69,3 @@ for(let i=0; i<aTag.length; i++){
     }
 }
 
-
-
-//

@@ -327,3 +327,7 @@ main .introduction{
 .portfolio .works .small{
     position: absolute;
 }
+
+[data-x].active{
+    outline:1px solid red;
+}
