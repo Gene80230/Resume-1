@@ -44,7 +44,8 @@ h1,h2,h3,h4,h5{
     padding:5px 0;
     display: block;
 }
-.topNavBar nav > ul li.active a::after{
+.topNavBar nav > ul li.active a::after,
+.topNavBar nav > ul li.highlight a::after{
     position:absolute;  
     content:''; 
     top:100%;

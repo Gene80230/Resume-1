@@ -15,7 +15,7 @@ requestAnimationFrame(animate);
     
     let specialTags = document.querySelectorAll('[data-x]')
     let minIndex = 0
-    for(let i=1;i<specialTags.length;i++){
+    for(let i=1; i<specialTags.length; i++){
         if(Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop - window.scrollY)){
             minIndex = i
         }
@@ -25,12 +25,13 @@ requestAnimationFrame(animate);
     let a = document.querySelector('a[href="#'+ id +'"]')
     let li = a.parentNode
     let brothers = li.parentNode.children
-    for(let i=0;i<brothers.length;i++){
-        brothers[i].classList.remove('active')
+    for(let i=0; i<brothers.length; i++){       //解决高亮与active冲突问题
+        brothers[i].classList.remove('highlight')
     }
-    li.classList.add('active')
+    li.classList.add('highlight')
 }
-//找到节点的下一个兄弟元素
+
+//找到li元素并让它显示高亮条
 let liTags = document.querySelectorAll('nav.menu > ul > li')
 for(let i=0; i<liTags.length; i++){
     liTags[i].onmouseenter = function(x){ 
