@@ -5,6 +5,13 @@ function animate(time) {
 }
 requestAnimationFrame(animate);
 
+//添加 offset 类
+let specialTags = document.querySelectorAll('[data-x]')
+for(let i=0; i<specialTags.length; i++){
+    specialTags[i].classList.add('offset')
+}
+xxx()
+
  //滚动导航栏贴住顶部
  window.onscroll = function(x){
     if(window.scrollY > 0){
@@ -12,7 +19,9 @@ requestAnimationFrame(animate);
     }else{
         topNavBar.classList.remove('sticky')
     }
-    
+    xxx()
+}
+function xxx(){ //从下往上动画
     let specialTags = document.querySelectorAll('[data-x]')
     let minIndex = 0
     for(let i=1; i<specialTags.length; i++){
@@ -21,6 +30,7 @@ requestAnimationFrame(animate);
         }
         
     }
+    specialTags[minIndex].classList.remove('offset')
     let id = specialTags[minIndex].id
     let a = document.querySelector('a[href="#'+ id +'"]')
     let li = a.parentNode
@@ -30,7 +40,6 @@ requestAnimationFrame(animate);
     }
     li.classList.add('highlight')
 }
-
 //找到li元素并让它显示高亮条
 let liTags = document.querySelectorAll('nav.menu > ul > li')
 for(let i=0; i<liTags.length; i++){
